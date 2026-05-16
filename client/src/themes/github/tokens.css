@@ -1,0 +1,19 @@
+:root {
+  color-scheme: light;
+  --gh-canvas-default: #ffffff;
+  --gh-canvas-subtle: #f6f8fa;
+  --gh-canvas-inset: #f6f8fa;
+  --gh-fg-default: #24292f;
+  --gh-fg-muted: #57606a;
+  --gh-fg-subtle: #656d76;
+  --gh-accent-emphasis: #0969da;
+  --gh-accent-muted: rgba(9, 105, 218, 0.12);
+  --gh-success-emphasis: #1a7f37;
+  --gh-danger-emphasis: #cf222e;
+  --gh-border-default: #d0d7de;
+  --gh-border-muted: #d8dee4;
+  --gh-neutral-muted: rgba(175, 184, 193, 0.2);
+  --gh-radius-medium: 6px;
+  --gh-font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --gh-font-family-mono: ui-monospace, SFMono-Regular, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+}

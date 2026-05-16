@@ -1,2 +1,18 @@
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; padding: 0; }
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--gh-canvas-default);
+  color: var(--gh-fg-default);
+  font: 14px/1.5 var(--gh-font-family);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
