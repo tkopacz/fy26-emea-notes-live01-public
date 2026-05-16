@@ -61,7 +61,7 @@ export const ComposeArea = forwardRef<ComposeAreaHandle, ComposeAreaProps>(
           clonedFromIdRef.current = undefined  // will be set by the caller
         }
         // Scroll to and focus the textarea.
-        textareaRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        textareaRef.current?.scrollIntoView?.({ behavior: 'smooth', block: 'center' })
         textareaRef.current?.focus()
       },
     }))
@@ -86,9 +86,15 @@ export const ComposeArea = forwardRef<ComposeAreaHandle, ComposeAreaProps>(
 
     return (
       <section className={styles.section} aria-label="Compose new note">
-        <p className={styles.hint}>
-          Your notes are saved permanently and cannot be edited.
-        </p>
+        <div className={styles.header}>
+          <div>
+            <p className={styles.eyebrow}>Draft</p>
+            <p className={styles.hint}>
+              Your notes are saved permanently and cannot be edited.
+            </p>
+          </div>
+          <span className={styles.status}>{saving ? 'Syncing…' : 'Ready'}</span>
+        </div>
         <textarea
           ref={textareaRef}
           className={styles.textarea}
@@ -100,6 +106,11 @@ export const ComposeArea = forwardRef<ComposeAreaHandle, ComposeAreaProps>(
           disabled={saving}
         />
         <div className={styles.actions}>
+          <div className={styles.toolbar} aria-hidden="true">
+            <span className={styles.toolbarPill}>Aa</span>
+            <span className={styles.toolbarPill}>✓</span>
+            <span className={styles.toolbarPill}>⌘K</span>
+          </div>
           <button
             className={styles.saveBtn}
             onClick={handleSave}

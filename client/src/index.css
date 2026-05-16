@@ -1,2 +1,24 @@
-*, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--apple-background-secondary);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--apple-background-secondary);
+  color: var(--apple-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}

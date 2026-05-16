@@ -1,10 +1,11 @@
 .card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 1rem 1.25rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  border-left: 4px solid #4a90e2;
-  margin-bottom: 1rem;
+  padding: 1rem 1.1rem;
+  border-radius: var(--apple-radius-xl);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 12px 30px rgba(28, 28, 30, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
 }
 
 .header {
@@ -24,12 +25,12 @@
 .date {
   font-weight: 700;
   font-size: 1rem;
-  color: #2d3748;
+  color: var(--apple-text);
 }
 
 .time {
   font-size: 0.875rem;
-  color: #718096;
+  color: var(--apple-muted-text);
   font-variant-numeric: tabular-nums;
 }
 
@@ -46,20 +47,21 @@
 }
 
 .cloneBtn {
-  padding: 0.3rem 0.7rem;
-  background: transparent;
-  border: 1px solid #4a90e2;
-  border-radius: 4px;
-  color: #4a90e2;
+  padding: 0.45rem 0.8rem;
+  background: var(--apple-blue-soft);
+  border: none;
+  border-radius: 999px;
+  color: var(--apple-blue);
   cursor: pointer;
   font-size: 0.8rem;
-  transition: background 0.15s, color 0.15s;
+  font-weight: 600;
+  transition: filter 0.15s, transform 0.15s;
   white-space: nowrap;
 }
 
 .cloneBtn:hover {
-  background: #4a90e2;
-  color: #fff;
+  filter: brightness(0.96);
+  transform: translateY(-1px);
 }
 
 .content {
@@ -68,22 +70,22 @@
   word-break: break-word;
   font-size: 0.95rem;
   line-height: 1.65;
-  color: #2d3748;
+  color: var(--apple-text);
 }
 
 .toggleBtn {
   margin-top: 0.5rem;
   background: none;
   border: none;
-  color: #4a90e2;
+  color: var(--apple-blue);
   cursor: pointer;
   font-size: 0.85rem;
   padding: 0;
-  text-decoration: underline;
+  font-weight: 600;
 }
 
 .cloneBadge {
   margin: 0.5rem 0 0;
   font-size: 0.8rem;
-  color: #a0aec0;
+  color: var(--apple-muted-text);
 }
