@@ -1,0 +1,25 @@
+/* Single-column layout, max 700px, centered */
+.app {
+  min-height: 100vh;
+  background: #f0f4f8;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.loading {
+  text-align: center;
+  color: #718096;
+  font-size: 0.95rem;
+}
+
+.emptyState {
+  text-align: center;
+  color: #a0aec0;
+  font-style: italic;
+  margin-top: 2rem;
+}

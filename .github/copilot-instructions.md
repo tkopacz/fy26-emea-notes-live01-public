@@ -1,0 +1,4 @@
+- always respond in English regardless of the language used in the prompt
+- always create unit test after code generation and validate if solution is correct by running the tests. If tests fail, fix the code until tests pass.
+- When generating code, always include comments for professional developer to explain the logic and purpose of the code.
+- application is running on Windows, so use powershell and other windows specific tools and commands when needed.

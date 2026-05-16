@@ -1,0 +1,89 @@
+.card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  border-left: 4px solid #4a90e2;
+  margin-bottom: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  gap: 0.5rem;
+}
+
+.timestamp {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.date {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #2d3748;
+}
+
+.time {
+  font-size: 0.875rem;
+  color: #718096;
+  font-variant-numeric: tabular-nums;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.lockIcon {
+  font-size: 1rem;
+  cursor: default;
+}
+
+.cloneBtn {
+  padding: 0.3rem 0.7rem;
+  background: transparent;
+  border: 1px solid #4a90e2;
+  border-radius: 4px;
+  color: #4a90e2;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.cloneBtn:hover {
+  background: #4a90e2;
+  color: #fff;
+}
+
+.content {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #2d3748;
+}
+
+.toggleBtn {
+  margin-top: 0.5rem;
+  background: none;
+  border: none;
+  color: #4a90e2;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.cloneBadge {
+  margin: 0.5rem 0 0;
+  font-size: 0.8rem;
+  color: #a0aec0;
+}
