@@ -106,7 +106,7 @@ export const ComposeArea = forwardRef<ComposeAreaHandle, ComposeAreaProps>(
           disabled={saving}
         />
         <div className={styles.actions}>
-          {/* Decorative shortcuts mirror Apple Notes' floating toolbar without adding inactive controls. */}
+          {/* Intentionally non-functional visual chrome to mirror Apple Notes' floating toolbar styling. */}
           <div className={styles.toolbar} aria-hidden="true">
             <span className={styles.toolbarPill}>Aa</span>
             <span className={styles.toolbarPill}>✓</span>
