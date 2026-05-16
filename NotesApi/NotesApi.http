@@ -1,0 +1,6 @@
+@NotesApi_HostAddress = http://localhost:5041
+
+GET {{NotesApi_HostAddress}}/health
+Accept: application/json
+
+###
