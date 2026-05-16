@@ -63,7 +63,6 @@ function AppApple() {
           title: 'Collections',
           items: [
             { icon: '📌', label: 'Pinned', count: 0 },
-            { icon: '🧾', label: 'Drafts', count: 1 },
           ],
         },
       ],
