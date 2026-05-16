@@ -82,7 +82,7 @@ export function NoteCard({ note, onClone, authorLabel = 'You' }: NoteCardProps) 
           <div className={styles.headerText}>
             <h3 className={styles.title}>Immutable note</h3>
             <div className={styles.metadataRow}>
-              <span className={styles.metadataItem}>Author {authorLabel}</span>
+              <span className={styles.metadataItem}>Author: {authorLabel}</span>
               <span className={styles.metadataDivider} aria-hidden="true">•</span>
               <time dateTime={note.createdAt} className={styles.metadataItem}>
                 {formattedDate} · {formattedTime}

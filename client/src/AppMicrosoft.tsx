@@ -80,7 +80,7 @@ function AppMicrosoft() {
   }
 
   const noteCountLabel = notes.length === 1 ? '1 note' : `${notes.length} notes`
-  const authorLabel = truncatedId ? `You · ${truncatedId}…` : 'You'
+  const authorMetadata = truncatedId ? `You · ${truncatedId}…` : 'You'
 
   return (
     <div className={styles.page}>
@@ -207,7 +207,7 @@ function AppMicrosoft() {
                   key={note.id}
                   note={note}
                   onClone={handleClone}
-                  authorLabel={authorLabel}
+                  authorLabel={authorMetadata}
                 />
               ))}
             </section>

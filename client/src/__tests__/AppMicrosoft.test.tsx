@@ -60,7 +60,8 @@ describe('AppMicrosoft', () => {
 
     render(<AppMicrosoft />)
 
-    expect(screen.getByText(/author you/i)).toBeInTheDocument()
+    expect(screen.getByText(/author: you/i)).toBeInTheDocument()
+    expect(screen.getByText(/16 may 2026 · 14:35:02/i)).toBeInTheDocument()
     expect(screen.getByText('1 note')).toBeInTheDocument()
     expect(screen.getByText('First note')).toBeInTheDocument()
   })
