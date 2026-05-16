@@ -4,7 +4,7 @@ This repository now contains the first backend building block for the note-takin
 
 ## What is included
 
-- ASP.NET Core 8 Web API project in `/home/runner/work/fy26-emea-notes-live01-public/fy26-emea-notes-live01-public/NotesApi`
+- ASP.NET Core 8 Web API project in `NotesApi/`
 - Swagger/OpenAPI enabled in **Development**
 - CORS configured for the React SPA development server at `http://localhost:5173`
 - Health endpoint at `GET /health`
@@ -69,7 +69,7 @@ What this does:
 From the repository root:
 
 ```bash
-dotnet run --project /home/runner/work/fy26-emea-notes-live01-public/fy26-emea-notes-live01-public/NotesApi/NotesApi.csproj --launch-profile http
+dotnet run --project NotesApi/NotesApi.csproj --launch-profile http
 ```
 
 ## Default local URLs
@@ -161,7 +161,7 @@ That folder should not be committed because it contains generated runtime state 
 From the repository root:
 
 ```bash
-dotnet build /home/runner/work/fy26-emea-notes-live01-public/fy26-emea-notes-live01-public/NotesApi/NotesApi.csproj
+dotnet build NotesApi/NotesApi.csproj
 ```
 
 ## Useful development files

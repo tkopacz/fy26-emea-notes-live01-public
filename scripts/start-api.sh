@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-REPO_ROOT="/home/runner/work/fy26-emea-notes-live01-public/fy26-emea-notes-live01-public"
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PROJECT_PATH="$REPO_ROOT/NotesApi/NotesApi.csproj"
 
 echo "Starting NotesApi on the configured HTTP development profile..."
