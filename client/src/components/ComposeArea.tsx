@@ -106,11 +106,14 @@ export const ComposeArea = forwardRef<ComposeAreaHandle, ComposeAreaProps>(
           disabled={saving}
         />
         <div className={styles.actions}>
-          {/* Intentionally non-functional visual chrome to mirror Apple Notes' floating toolbar styling. */}
-          <div className={styles.toolbar} aria-hidden="true">
-            <span className={styles.toolbarPill}>Aa</span>
-            <span className={styles.toolbarPill}>✓</span>
-            <span className={styles.toolbarPill}>⌘K</span>
+          <div className={styles.toolbarPreview}>
+            <span className={styles.toolbarLabel}>Formatting preview</span>
+            {/* Intentionally non-functional visual chrome to mirror Apple Notes' floating toolbar styling. */}
+            <div className={styles.toolbar} aria-hidden="true">
+              <span className={styles.toolbarPill}>Aa</span>
+              <span className={styles.toolbarPill}>✓</span>
+              <span className={styles.toolbarPill}>⌘K</span>
+            </div>
           </div>
           <button
             className={styles.saveBtn}
