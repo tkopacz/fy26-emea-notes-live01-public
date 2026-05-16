@@ -11,6 +11,7 @@ public class CreateNoteRequest
     /// <summary>The text content to save. Must not be empty or whitespace.</summary>
     [Required]
     [MinLength(1, ErrorMessage = "Content must not be empty.")]
+    [MaxLength(50_000, ErrorMessage = "Note content must not exceed 50,000 characters.")]
     public string Content { get; init; } = string.Empty;
 
     /// <summary>

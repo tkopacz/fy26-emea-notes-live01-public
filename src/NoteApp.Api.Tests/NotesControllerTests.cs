@@ -242,6 +242,42 @@ public class NotesControllerTests : IClassFixture<WebApplicationFactory<Program>
     }
 
     // -----------------------------------------------------------------------
+    // Security: content size cap (DoS / storage exhaustion)
+    // -----------------------------------------------------------------------
+
+    [Fact]
+    public async Task PostNotes_ContentExceeds50000Characters_Returns400()
+    {
+        var client = CreateClientWithMockStorage(mock => { });
+        client.DefaultRequestHeaders.Add("X-User-Id", TestUserId);
+
+        // 50,001 chars — one over the MaxLength limit.
+        var oversizedContent = new string('A', 50_001);
+        var response = await client.PostAsJsonAsync("/api/notes",
+            new { content = oversizedContent });
+
+        Assert.Equal(HttpStatusCode.BadRequest, response.StatusCode);
+    }
+
+    [Fact]
+    public async Task PostNotes_ContentAtExactLimit_Returns201()
+    {
+        var client = CreateClientWithMockStorage(mock =>
+        {
+            mock.Setup(s => s.AppendNoteAsync(It.IsAny<string>(), It.IsAny<Note>()))
+                .Returns(Task.CompletedTask);
+        });
+        client.DefaultRequestHeaders.Add("X-User-Id", TestUserId);
+
+        // Exactly 50,000 chars — at the boundary, must be accepted.
+        var maxContent = new string('B', 50_000);
+        var response = await client.PostAsJsonAsync("/api/notes",
+            new { content = maxContent });
+
+        Assert.Equal(HttpStatusCode.Created, response.StatusCode);
+    }
+
+    // -----------------------------------------------------------------------
     // Helpers
     // -----------------------------------------------------------------------
 

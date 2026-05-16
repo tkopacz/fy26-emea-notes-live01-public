@@ -116,9 +116,30 @@ public class NoteStorageService : INoteStorageService
 
     // ---------- helpers ----------
 
-    /// <summary>Returns the full path to the user's JSON file.</summary>
-    private string GetFilePath(string userGuid) =>
-        Path.Combine(_dataDir, $"{userGuid}.json");
+    /// <summary>
+    /// Returns the full canonical path to the user's JSON file.
+    /// Asserts the resolved path is inside _dataDir to prevent path traversal,
+    /// even though userGuid has already been validated as a GUID by middleware.
+    /// This is a defence-in-depth guard that costs essentially nothing.
+    /// </summary>
+    private string GetFilePath(string userGuid)
+    {
+        // Resolve both paths to their absolute canonical forms.
+        var fullDataDir = Path.GetFullPath(_dataDir);
+        var filePath    = Path.GetFullPath(Path.Combine(fullDataDir, $"{userGuid}.json"));
+
+        // The file must reside directly inside the data directory — not in a subdirectory,
+        // not above it.  A crafted GUID like "../../etc/passwd" would fail here.
+        if (!filePath.StartsWith(fullDataDir + Path.DirectorySeparatorChar,
+                                 StringComparison.OrdinalIgnoreCase))
+        {
+            // Log without the full GUID to avoid leaking potentially crafted values.
+            _logger.LogWarning("Path traversal attempt blocked for user path outside data dir.");
+            throw new UnauthorizedAccessException("Invalid file path resolved outside the data directory.");
+        }
+
+        return filePath;
+    }
 
     /// <summary>
     /// Returns only the first 8 characters of a GUID for use in log messages,

@@ -191,6 +191,33 @@ public class NoteStorageServiceTests : IDisposable
     }
 
     // -----------------------------------------------------------------------
+    // Security: path traversal guard
+    // -----------------------------------------------------------------------
+
+    [Theory]
+    [InlineData("../../etc/passwd")]
+    [InlineData("..\\..\\appsettings.json")]
+    [InlineData("../secret")]
+    public async Task GetNotesAsync_PathTraversalAttempt_ThrowsUnauthorizedAccessException(string maliciousGuid)
+    {
+        // The GUID has already been validated by middleware, so this test covers
+        // defence-in-depth: the service itself must refuse paths outside _dataDir.
+        await Assert.ThrowsAsync<UnauthorizedAccessException>(
+            () => _sut.GetNotesAsync(maliciousGuid));
+    }
+
+    [Theory]
+    [InlineData("../../etc/passwd")]
+    [InlineData("../secret")]
+    public async Task AppendNoteAsync_PathTraversalAttempt_ThrowsUnauthorizedAccessException(string maliciousGuid)
+    {
+        var note = new Note { Id = "x", CreatedAt = DateTime.UtcNow, Content = "hack" };
+
+        await Assert.ThrowsAsync<UnauthorizedAccessException>(
+            () => _sut.AppendNoteAsync(maliciousGuid, note));
+    }
+
+    // -----------------------------------------------------------------------
     // Helpers
     // -----------------------------------------------------------------------
 

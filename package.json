@@ -1,0 +1,10 @@
+{
+  "name": "noteapp-runner",
+  "private": true,
+  "scripts": {
+    "start": "concurrently --names api,client --prefix name --kill-others \"dotnet run --project src/NoteApp.Api/NoteApp.Api.csproj --no-launch-profile --urls http://localhost:5000\" \"npm --prefix client run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
