@@ -1,0 +1,23 @@
+.switcher {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.button {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--color-control-border);
+  border-radius: 999px;
+  background: var(--color-control-surface);
+  color: var(--color-control-text);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.button[data-active='true'] {
+  background: var(--color-control-active-bg);
+  border-color: var(--color-control-active-bg);
+  color: var(--color-control-active-text);
+}
