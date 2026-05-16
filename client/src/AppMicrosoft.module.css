@@ -1,0 +1,307 @@
+.page {
+  min-height: 100vh;
+  background: var(--msft-color-background);
+  color: var(--msft-color-text);
+}
+
+.shell {
+  max-width: var(--msft-shell-max-width);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.breadcrumb {
+  margin-bottom: 12px;
+}
+
+.breadcrumbList {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--msft-color-text-muted);
+  font-size: 13px;
+}
+
+.commandBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 24px;
+  background: var(--msft-color-surface);
+  border: 1px solid var(--msft-color-border);
+  border-radius: var(--msft-radius-card);
+  box-shadow: var(--msft-shadow-card);
+}
+
+.commandContext {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex: 1;
+}
+
+.commandTitleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.commandIcon,
+.emptyIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--msft-radius-card);
+  color: var(--msft-color-accent);
+  background: var(--msft-color-accent-subtle);
+  flex-shrink: 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.eyebrow,
+.panelEyebrow {
+  margin: 0 0 4px;
+  color: var(--msft-color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.title,
+.panelTitle {
+  margin: 0;
+  color: var(--msft-color-text);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  max-width: 560px;
+  color: var(--msft-color-text-secondary);
+}
+
+.identityCard {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 148px;
+  padding: 12px 14px;
+  background: var(--msft-color-canvas);
+  border: 1px solid var(--msft-color-border);
+  border-radius: var(--msft-radius-card);
+}
+
+.identityLabel {
+  color: var(--msft-color-text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.identityValue {
+  color: var(--msft-color-text);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.commandActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.commandButton,
+.secondaryButton,
+.pivot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 36px;
+  padding: 0 16px;
+  border-radius: var(--msft-radius-card);
+  border: 1px solid transparent;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+.commandButton {
+  background: var(--msft-color-accent);
+  color: var(--msft-color-accent-foreground);
+}
+
+.commandButton:hover {
+  background: var(--msft-color-accent-hover);
+}
+
+.secondaryButton,
+.pivot {
+  background: var(--msft-color-surface);
+  color: var(--msft-color-text);
+  border-color: var(--msft-color-border-strong);
+}
+
+.secondaryButton:hover,
+.pivot:hover {
+  background: var(--msft-color-hover);
+}
+
+.secondaryButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.pivots {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.pivot[data-active='true'] {
+  background: var(--msft-color-accent-subtle);
+  border-color: var(--msft-color-accent);
+  color: var(--msft-color-accent);
+}
+
+.feedbackStack {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.95fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.listPanel,
+.detailPanel {
+  min-width: 0;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.countBadge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: var(--msft-color-surface);
+  color: var(--msft-color-text-secondary);
+  border: 1px solid var(--msft-color-border);
+  box-shadow: var(--msft-shadow-card);
+  font-weight: 600;
+}
+
+.loading {
+  margin: 0;
+  padding: 18px 20px;
+  border-radius: var(--msft-radius-card);
+  background: var(--msft-color-surface);
+  border: 1px solid var(--msft-color-border);
+  color: var(--msft-color-text-secondary);
+  box-shadow: var(--msft-shadow-card);
+}
+
+.emptyState {
+  display: grid;
+  justify-items: start;
+  gap: 12px;
+  padding: 28px;
+  background: var(--msft-color-surface);
+  border: 1px solid var(--msft-color-border);
+  border-radius: var(--msft-radius-card);
+  box-shadow: var(--msft-shadow-card);
+}
+
+.emptyTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.emptyBody {
+  margin: 0;
+  color: var(--msft-color-text-secondary);
+}
+
+.noteList {
+  display: grid;
+  gap: 16px;
+}
+
+@media (max-width: 960px) {
+  .commandBar,
+  .commandContext {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .commandActions {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    padding: 16px;
+  }
+
+  .commandBar {
+    padding: 16px;
+  }
+
+  .commandTitleRow {
+    gap: 12px;
+  }
+
+  .title,
+  .panelTitle {
+    font-size: 20px;
+  }
+
+  .pivots {
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .commandActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .commandButton,
+  .secondaryButton,
+  .pivot {
+    width: 100%;
+  }
+}

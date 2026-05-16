@@ -1,16 +1,18 @@
 .banner {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.875rem 1.5rem;
-  background: #7b1616;
-  color: #fefefe;
+  gap: 4px;
+  padding: 14px 16px;
+  background: var(--msft-color-error);
+  color: var(--msft-color-accent-foreground);
   font-weight: 600;
-  border-left: 4px solid #e53e3e;
+  border-left: 4px solid var(--msft-color-error-border);
+  border-radius: var(--msft-radius-card);
+  box-shadow: var(--msft-shadow-card);
 }
 
 .hint {
   font-weight: 400;
-  font-size: 0.85rem;
-  color: #feb2b2;
+  color: var(--msft-color-error-hint);
+  font-size: 13px;
 }
