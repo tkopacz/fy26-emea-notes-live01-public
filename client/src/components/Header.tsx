@@ -23,11 +23,14 @@ export function Header({ truncatedId, fullId }: HeaderProps) {
 
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>📝 Immutable Notes</h1>
+      <div>
+        <p className={styles.eyebrow}>Apple Style</p>
+        <h1 className={styles.title}>🗒️ Notes</h1>
+      </div>
       {truncatedId && (
         <div className={styles.identity}>
           <span className={styles.idLabel} title={fullId}>
-            ID: <code>{truncatedId}…</code>
+            iCloud ID: <code>{truncatedId}…</code>
           </span>
           <button
             className={styles.copyBtn}
