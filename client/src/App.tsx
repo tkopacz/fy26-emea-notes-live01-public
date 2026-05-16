@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <div className={styles.app} data-theme={theme}>
+    <div className={styles.app}>
       <Header
         truncatedId={truncatedId}
         fullId={userId}
