@@ -1,0 +1,46 @@
+:root {
+  --msft-color-background: #f3f2f1;
+  --msft-color-canvas: #faf9f8;
+  --msft-color-surface: #ffffff;
+  --msft-color-text: #323130;
+  --msft-color-text-secondary: #605e5c;
+  --msft-color-text-muted: #8a8886;
+  --msft-color-border: #edebe9;
+  --msft-color-border-strong: #c8c6c4;
+  --msft-color-accent: #0078d4;
+  --msft-color-accent-hover: #106ebe;
+  --msft-color-accent-foreground: #ffffff;
+  --msft-color-accent-subtle: #deecf9;
+  --msft-color-hover: #f8f8f8;
+  --msft-color-disabled: #f3f2f1;
+  --msft-color-disabled-text: #a19f9d;
+  --msft-color-focus: rgba(0, 120, 212, 0.18);
+  --msft-color-error: #a4262c;
+  --msft-color-error-border: #d13438;
+  --msft-color-error-hint: #fde7e9;
+  --msft-shadow-card: 0 2px 4px rgba(0, 0, 0, 0.14);
+  --msft-radius-card: 4px;
+  --msft-radius-input: 2px;
+  --msft-shell-max-width: 1280px;
+  --msft-font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background: var(--msft-color-background);
+  color: var(--msft-color-text);
+  font-family: var(--msft-font-family);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+button,
+textarea,
+input {
+  font: inherit;
+}

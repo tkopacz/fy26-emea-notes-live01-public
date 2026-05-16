@@ -8,6 +8,7 @@ import {
 import styles from './ComposeArea.module.css'
 
 const DRAFT_KEY = 'noteapp_draft'
+const TEXTAREA_ID = 'compose-note-input'
 
 export interface ComposeAreaHandle {
   /** Scrolls to and focuses the textarea (used by Clone button). */
@@ -86,13 +87,19 @@ export const ComposeArea = forwardRef<ComposeAreaHandle, ComposeAreaProps>(
 
     return (
       <section className={styles.section} aria-label="Compose new note">
-        <p className={styles.hint}>
-          Your notes are saved permanently and cannot be edited.
-        </p>
+        <div className={styles.header}>
+          <p className={styles.eyebrow}>Compose</p>
+          <h2 className={styles.title}>Create a note</h2>
+          <p className={styles.hint}>
+            Notes are saved permanently and remain read-only after you post them.
+          </p>
+        </div>
+        <label className={styles.label} htmlFor={TEXTAREA_ID}>New note</label>
         <textarea
+          id={TEXTAREA_ID}
           ref={textareaRef}
           className={styles.textarea}
-          placeholder="New note…"
+          placeholder="Type your note here…"
           aria-label="New note"
           value={content}
           onChange={(e) => setContent(e.target.value)}
@@ -100,13 +107,15 @@ export const ComposeArea = forwardRef<ComposeAreaHandle, ComposeAreaProps>(
           disabled={saving}
         />
         <div className={styles.actions}>
+          <span className={styles.status}>{content.length} characters</span>
           <button
+            type="button"
             className={styles.saveBtn}
             onClick={handleSave}
             disabled={isEmpty || saving}
             aria-label="Save note"
           >
-            {saving ? 'Saving…' : 'Save'}
+            {saving ? 'Saving…' : 'Save note'}
           </button>
         </div>
       </section>

@@ -79,4 +79,11 @@ describe('NoteCard', () => {
     // clonedFromId is truncated to first 8 chars: 'original'
     expect(screen.getByText(/original/)).toBeTruthy()
   })
+
+  it('renders the author and timestamp metadata row', () => {
+    render(<NoteCard note={baseNote} onClone={vi.fn()} authorLabel="You · 3fa85f64…" />)
+
+    expect(screen.getByText(/author: you/i)).toBeTruthy()
+    expect(screen.getByText(/14:35:02/)).toBeTruthy()
+  })
 })
