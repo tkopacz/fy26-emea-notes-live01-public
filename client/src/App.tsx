@@ -5,6 +5,7 @@ import { ErrorBanner } from './components/ErrorBanner'
 import { Header } from './components/Header'
 import { NoteCard } from './components/NoteCard'
 import { useNotes } from './hooks/useNotes'
+import { useTheme } from './hooks/useTheme'
 import { useUserId } from './hooks/useUserId'
 import type { Note } from './api/notesApi'
 import styles from './App.module.css'
@@ -15,6 +16,7 @@ import styles from './App.module.css'
  */
 function App() {
   const { userId, truncatedId, isStorageUnavailable } = useUserId()
+  const { theme, setTheme } = useTheme()
   const { notes, loading, error, saveNote } = useNotes(userId)
 
   // Ref to ComposeArea so Clone buttons can scroll-to and pre-fill it.
@@ -36,7 +38,12 @@ function App() {
 
   return (
     <div className={styles.app}>
-      <Header truncatedId={truncatedId} fullId={userId} />
+      <Header
+        truncatedId={truncatedId}
+        fullId={userId}
+        theme={theme}
+        onThemeChange={setTheme}
+      />
       {isStorageUnavailable && (
         <ErrorBanner message="Your browser local storage is unavailable. Your ID is in-memory only." />
       )}

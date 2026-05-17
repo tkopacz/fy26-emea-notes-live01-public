@@ -1,23 +1,27 @@
 .section {
-  background: #fff;
-  border-radius: 8px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--radius-card);
   padding: 1.25rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: var(--surface-backdrop-filter);
   margin-bottom: 1.5rem;
 }
 
 .hint {
   margin: 0 0 0.75rem;
   font-size: 0.85rem;
-  color: #718096;
+  color: var(--color-text-secondary);
   font-style: italic;
 }
 
 .textarea {
   width: 100%;
   box-sizing: border-box;
-  border: 1.5px solid #cbd5e0;
-  border-radius: 6px;
+  border: 1px solid var(--color-input-border);
+  border-radius: var(--radius-input);
+  background: var(--color-input-bg);
+  color: var(--color-text-primary);
   padding: 0.75rem;
   font-size: 0.95rem;
   font-family: inherit;
@@ -28,13 +32,13 @@
 
 .textarea:focus {
   outline: none;
-  border-color: #4a90e2;
-  box-shadow: 0 0 0 3px rgba(74,144,226,0.15);
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
 }
 
 .textarea:disabled {
-  background: #f7fafc;
-  color: #a0aec0;
+  background: var(--color-disabled-bg);
+  color: var(--color-disabled-text);
 }
 
 .actions {
@@ -45,10 +49,10 @@
 
 .saveBtn {
   padding: 0.5rem 1.5rem;
-  background: #4a90e2;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-button-text);
   border: none;
-  border-radius: 6px;
+  border-radius: var(--radius-btn);
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
@@ -56,10 +60,10 @@
 }
 
 .saveBtn:hover:not(:disabled) {
-  background: #2b6cb0;
+  background: var(--color-primary-hover);
 }
 
 .saveBtn:disabled {
-  background: #bee3f8;
+  background: var(--color-primary-disabled);
   cursor: not-allowed;
 }

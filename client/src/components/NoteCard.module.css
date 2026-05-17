@@ -1,9 +1,11 @@
 .card {
-  background: #fff;
-  border-radius: 8px;
+  background: var(--color-card-bg);
+  border: 1px solid var(--surface-border);
+  border-left: 4px solid var(--color-card-accent);
+  border-radius: var(--radius-card);
   padding: 1rem 1.25rem;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
-  border-left: 4px solid #4a90e2;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: var(--surface-backdrop-filter);
   margin-bottom: 1rem;
 }
 
@@ -24,12 +26,12 @@
 .date {
   font-weight: 700;
   font-size: 1rem;
-  color: #2d3748;
+  color: var(--color-text-primary);
 }
 
 .time {
   font-size: 0.875rem;
-  color: #718096;
+  color: var(--color-text-secondary);
   font-variant-numeric: tabular-nums;
 }
 
@@ -48,9 +50,9 @@
 .cloneBtn {
   padding: 0.3rem 0.7rem;
   background: transparent;
-  border: 1px solid #4a90e2;
-  border-radius: 4px;
-  color: #4a90e2;
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-btn);
+  color: var(--color-primary);
   cursor: pointer;
   font-size: 0.8rem;
   transition: background 0.15s, color 0.15s;
@@ -58,8 +60,8 @@
 }
 
 .cloneBtn:hover {
-  background: #4a90e2;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-button-text);
 }
 
 .content {
@@ -68,14 +70,14 @@
   word-break: break-word;
   font-size: 0.95rem;
   line-height: 1.65;
-  color: #2d3748;
+  color: var(--color-text-primary);
 }
 
 .toggleBtn {
   margin-top: 0.5rem;
   background: none;
   border: none;
-  color: #4a90e2;
+  color: var(--color-primary);
   cursor: pointer;
   font-size: 0.85rem;
   padding: 0;
@@ -85,5 +87,5 @@
 .cloneBadge {
   margin: 0.5rem 0 0;
   font-size: 0.8rem;
-  color: #a0aec0;
+  color: var(--color-text-muted);
 }
